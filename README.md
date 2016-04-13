@@ -5,7 +5,7 @@
 [![Total Downloads](https://poser.pugx.org/wsdltophp/package-colissimo-tracking/downloads)](https://packagist.org/packages/wsdltophp/package-colissimo-tracking)
 
 # PackageColissimoTracking
-This package has been generated from the [Colissimo Tracking Web Services](https://ws.colissimo.fr/sls-ws/SlsServiceWS?wsdl) WSDL using the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project.
+This package has been generated from the [Colissimo Tracking Web Services](https://www.coliposte.fr/tracking-chargeur-cxf/TrackingServiceWS?wsdl) WSDL using the [PackageGenerator](https://github.com/WsdlToPhp/PackageGenerator) project.
 
 # Summary
 - [Generating again the package](#generating-again-the-package)
