@@ -16,9 +16,9 @@ class ClassMap
     final public static function get()
     {
         return array(
-            'skybillInformationResult' => 'ColissimoTracking\StructType\SkybillInformationResult',
-            'track' => 'ColissimoTracking\StructType\Track',
-            'trackResponse' => 'ColissimoTracking\StructType\TrackResponse',
+            'skybillInformationResult' => '\\ColissimoTracking\\StructType\\SkybillInformationResult',
+            'track' => '\\ColissimoTracking\\StructType\\Track',
+            'trackResponse' => '\\ColissimoTracking\\StructType\\TrackResponse',
         );
     }
 }
