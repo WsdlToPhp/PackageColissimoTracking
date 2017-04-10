@@ -18,6 +18,7 @@ php wsdltophp.phar generate:package \
     --urlorpath="https://www.coliposte.fr/tracking-chargeur-cxf/TrackingServiceWS?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-tracking" \
+    --composer-settings="autoload.psr-4.SoapClient\:./SoapClient/" \
     --addcomments="author:WsdlToPhp <contact@wsdltophp.com>" \
     --soapclient="\SoapClient\SoapClientBase" \
     --namespace="ColissimoTracking";
@@ -27,6 +28,7 @@ php wsdltophp.phar generate:package \
     --urlorpath="https://www.coliposte.fr/tracking-chargeur-cxf/TrackingServiceWS?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-tracking" \
+    --composer-settings="autoload.psr-4.SoapClient\:./SoapClient/" \
     --addcomments="author:WsdlToPhp <contact@wsdltophp.com>" \
     --soapclient="\SoapClient\SoapClientBase" \
     --namespace="ColissimoTracking" \
