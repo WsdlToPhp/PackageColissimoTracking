@@ -14,7 +14,7 @@ rm -rf  $DEST/src/ \
         $DEST/composer.lock;
 
 # package informations
-php wsdltophp.phar generate:package \
+php-7.3 wsdltophp.phar generate:package \
     --urlorpath="https://www.coliposte.fr/tracking-chargeur-cxf/TrackingServiceWS?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-tracking" \
@@ -24,7 +24,7 @@ php wsdltophp.phar generate:package \
     --namespace="ColissimoTracking";
 
 # generate package
-php wsdltophp.phar generate:package \
+php-7.3 wsdltophp.phar generate:package \
     --urlorpath="https://www.coliposte.fr/tracking-chargeur-cxf/TrackingServiceWS?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-tracking" \
