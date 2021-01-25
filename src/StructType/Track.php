@@ -6,8 +6,8 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for track StructType
- * Meta informations extracted from the WSDL
- * - type: track
+ * Meta information extracted from the WSDL
+ * - type: tns:track
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -15,40 +15,50 @@ class Track extends AbstractStructBase
 {
     /**
      * The accountNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $accountNumber;
     /**
      * The password
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $password;
     /**
      * The skybillNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $skybillNumber;
     /**
+     * The apiKey
+     * Meta information extracted from the WSDL
+     * - minOccurs: 0
+     * @var string
+     */
+    public $apiKey;
+    /**
      * Constructor method for track
      * @uses Track::setAccountNumber()
      * @uses Track::setPassword()
      * @uses Track::setSkybillNumber()
+     * @uses Track::setApiKey()
      * @param string $accountNumber
      * @param string $password
      * @param string $skybillNumber
+     * @param string $apiKey
      */
-    public function __construct($accountNumber = null, $password = null, $skybillNumber = null)
+    public function __construct($accountNumber = null, $password = null, $skybillNumber = null, $apiKey = null)
     {
         $this
             ->setAccountNumber($accountNumber)
             ->setPassword($password)
-            ->setSkybillNumber($skybillNumber);
+            ->setSkybillNumber($skybillNumber)
+            ->setApiKey($apiKey);
     }
     /**
      * Get accountNumber value
@@ -67,7 +77,7 @@ class Track extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($accountNumber) && !is_string($accountNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($accountNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($accountNumber, true), gettype($accountNumber)), __LINE__);
         }
         $this->accountNumber = $accountNumber;
         return $this;
@@ -89,7 +99,7 @@ class Track extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($password) && !is_string($password)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($password)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($password, true), gettype($password)), __LINE__);
         }
         $this->password = $password;
         return $this;
@@ -111,29 +121,31 @@ class Track extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($skybillNumber) && !is_string($skybillNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($skybillNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($skybillNumber, true), gettype($skybillNumber)), __LINE__);
         }
         $this->skybillNumber = $skybillNumber;
         return $this;
     }
     /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoTracking\StructType\Track
+     * Get apiKey value
+     * @return string|null
      */
-    public static function __set_state(array $array)
+    public function getApiKey()
     {
-        return parent::__set_state($array);
+        return $this->apiKey;
     }
     /**
-     * Method returning the class name
-     * @return string __CLASS__
+     * Set apiKey value
+     * @param string $apiKey
+     * @return \ColissimoTracking\StructType\Track
      */
-    public function __toString()
+    public function setApiKey($apiKey = null)
     {
-        return __CLASS__;
+        // validation for constraint: string
+        if (!is_null($apiKey) && !is_string($apiKey)) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($apiKey, true), gettype($apiKey)), __LINE__);
+        }
+        $this->apiKey = $apiKey;
+        return $this;
     }
 }

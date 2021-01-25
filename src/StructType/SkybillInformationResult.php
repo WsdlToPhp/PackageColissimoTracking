@@ -6,6 +6,8 @@ use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for skybillInformationResult StructType
+ * Meta information extracted from the WSDL
+ * - type: tns:skybillInformationResult
  * @subpackage Structs
  * @author WsdlToPhp <contact@wsdltophp.com>
  */
@@ -18,63 +20,63 @@ class SkybillInformationResult extends AbstractStructBase
     public $errorCode;
     /**
      * The errorMessage
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $errorMessage;
     /**
      * The eventCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $eventCode;
     /**
      * The eventDate
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $eventDate;
     /**
      * The eventLibelle
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $eventLibelle;
     /**
      * The eventSite
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $eventSite;
     /**
      * The recipientCity
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $recipientCity;
     /**
      * The recipientCountryCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $recipientCountryCode;
     /**
      * The recipientZipCode
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
     public $recipientZipCode;
     /**
      * The skybillNumber
-     * Meta informations extracted from the WSDL
+     * Meta information extracted from the WSDL
      * - minOccurs: 0
      * @var string
      */
@@ -132,8 +134,8 @@ class SkybillInformationResult extends AbstractStructBase
     public function setErrorCode($errorCode = null)
     {
         // validation for constraint: int
-        if (!is_null($errorCode) && !is_numeric($errorCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($errorCode)), __LINE__);
+        if (!is_null($errorCode) && !(is_int($errorCode) || ctype_digit($errorCode))) {
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->errorCode = $errorCode;
         return $this;
@@ -155,7 +157,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($errorMessage) && !is_string($errorMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($errorMessage)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
         }
         $this->errorMessage = $errorMessage;
         return $this;
@@ -177,7 +179,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eventCode) && !is_string($eventCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eventCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventCode, true), gettype($eventCode)), __LINE__);
         }
         $this->eventCode = $eventCode;
         return $this;
@@ -199,7 +201,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eventDate) && !is_string($eventDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eventDate)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventDate, true), gettype($eventDate)), __LINE__);
         }
         $this->eventDate = $eventDate;
         return $this;
@@ -221,7 +223,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eventLibelle) && !is_string($eventLibelle)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eventLibelle)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventLibelle, true), gettype($eventLibelle)), __LINE__);
         }
         $this->eventLibelle = $eventLibelle;
         return $this;
@@ -243,7 +245,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($eventSite) && !is_string($eventSite)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($eventSite)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventSite, true), gettype($eventSite)), __LINE__);
         }
         $this->eventSite = $eventSite;
         return $this;
@@ -265,7 +267,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($recipientCity) && !is_string($recipientCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($recipientCity)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientCity, true), gettype($recipientCity)), __LINE__);
         }
         $this->recipientCity = $recipientCity;
         return $this;
@@ -287,7 +289,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($recipientCountryCode) && !is_string($recipientCountryCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($recipientCountryCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientCountryCode, true), gettype($recipientCountryCode)), __LINE__);
         }
         $this->recipientCountryCode = $recipientCountryCode;
         return $this;
@@ -309,7 +311,7 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($recipientZipCode) && !is_string($recipientZipCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($recipientZipCode)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientZipCode, true), gettype($recipientZipCode)), __LINE__);
         }
         $this->recipientZipCode = $recipientZipCode;
         return $this;
@@ -331,29 +333,9 @@ class SkybillInformationResult extends AbstractStructBase
     {
         // validation for constraint: string
         if (!is_null($skybillNumber) && !is_string($skybillNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($skybillNumber)), __LINE__);
+            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($skybillNumber, true), gettype($skybillNumber)), __LINE__);
         }
         $this->skybillNumber = $skybillNumber;
         return $this;
-    }
-    /**
-     * Method called when an object has been exported with var_export() functions
-     * It allows to return an object instantiated with the values
-     * @see AbstractStructBase::__set_state()
-     * @uses AbstractStructBase::__set_state()
-     * @param array $array the exported values
-     * @return \ColissimoTracking\StructType\SkybillInformationResult
-     */
-    public static function __set_state(array $array)
-    {
-        return parent::__set_state($array);
-    }
-    /**
-     * Method returning the class name
-     * @return string __CLASS__
-     */
-    public function __toString()
-    {
-        return __CLASS__;
     }
 }
