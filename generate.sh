@@ -14,22 +14,26 @@ rm -rf  $DEST/src/ \
         $DEST/composer.lock;
 
 # package informations
-php-7.3 wsdltophp.phar generate:package \
+php wsdltophp.phar generate:package \
     --urlorpath="https://www.coliposte.fr/tracking-chargeur-cxf/TrackingServiceWS?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-tracking" \
     --composer-settings="autoload.psr-4.SoapClient\:./SoapClient/" \
+    --composer-settings="type:library" \
+    --composer-settings="license:MIT" \
     --addcomments="author:WsdlToPhp <contact@wsdltophp.com>" \
-    --soapclient="\SoapClient\SoapClientBase" \
+    --soapclient="SoapClient\SoapClientBase" \
     --namespace="ColissimoTracking";
 
 # generate package
-php-7.3 wsdltophp.phar generate:package \
+php wsdltophp.phar generate:package \
     --urlorpath="https://www.coliposte.fr/tracking-chargeur-cxf/TrackingServiceWS?wsdl" \
     --destination=$DEST \
     --composer-name="wsdltophp/package-colissimo-tracking" \
     --composer-settings="autoload.psr-4.SoapClient\:./SoapClient/" \
+    --composer-settings="type:library" \
+    --composer-settings="license:MIT" \
     --addcomments="author:WsdlToPhp <contact@wsdltophp.com>" \
-    --soapclient="\SoapClient\SoapClientBase" \
+    --soapclient="SoapClient\SoapClientBase" \
     --namespace="ColissimoTracking" \
     --force;

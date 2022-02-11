@@ -1,4 +1,5 @@
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/WsdlToPhp/PackageColissimoTracking/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/WsdlToPhp/PackageColissimoTracking/?branch=develop)
+[![TeamCity build status](https://teamcity.mikael-delsol.fr/app/rest/builds/buildType:id:PackageColissimoTracking_Build/statusIcon.svg)](https://github.com/WsdlToPhp/PackageColissimoTracking)
 [![Latest Stable Version](https://poser.pugx.org/wsdltophp/package-colissimo-tracking/v/stable)](https://packagist.org/packages/wsdltophp/package-colissimo-tracking)
 [![Dependency Status](https://www.versioneye.com/user/projects/570df28ffcd19a0039f16b4c/badge.svg?style=flat)](https://www.versioneye.com/user/projects/570df28ffcd19a0039f16b4c)
 [![StyleCI](https://styleci.io/repos/56129051/shield)](https://styleci.io/repos/56129051)

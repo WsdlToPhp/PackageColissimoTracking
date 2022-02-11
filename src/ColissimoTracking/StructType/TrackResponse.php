@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoTracking\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for trackResponse StructType
@@ -17,15 +20,15 @@ class TrackResponse extends AbstractStructBase
      * The return
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var \ColissimoTracking\StructType\SkybillInformationResult
+     * @var \ColissimoTracking\StructType\SkybillInformationResult|null
      */
-    public $return;
+    protected ?\ColissimoTracking\StructType\SkybillInformationResult $return = null;
     /**
      * Constructor method for trackResponse
      * @uses TrackResponse::setReturn()
      * @param \ColissimoTracking\StructType\SkybillInformationResult $return
      */
-    public function __construct(\ColissimoTracking\StructType\SkybillInformationResult $return = null)
+    public function __construct(?\ColissimoTracking\StructType\SkybillInformationResult $return = null)
     {
         $this
             ->setReturn($return);
@@ -34,7 +37,7 @@ class TrackResponse extends AbstractStructBase
      * Get return value
      * @return \ColissimoTracking\StructType\SkybillInformationResult|null
      */
-    public function getReturn()
+    public function getReturn(): ?\ColissimoTracking\StructType\SkybillInformationResult
     {
         return $this->return;
     }
@@ -43,9 +46,10 @@ class TrackResponse extends AbstractStructBase
      * @param \ColissimoTracking\StructType\SkybillInformationResult $return
      * @return \ColissimoTracking\StructType\TrackResponse
      */
-    public function setReturn(\ColissimoTracking\StructType\SkybillInformationResult $return = null)
+    public function setReturn(?\ColissimoTracking\StructType\SkybillInformationResult $return = null): self
     {
         $this->return = $return;
+        
         return $this;
     }
 }

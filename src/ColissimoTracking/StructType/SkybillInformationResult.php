@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoTracking\StructType;
 
-use \WsdlToPhp\PackageBase\AbstractStructBase;
+use InvalidArgumentException;
+use WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for skybillInformationResult StructType
@@ -15,72 +18,72 @@ class SkybillInformationResult extends AbstractStructBase
 {
     /**
      * The errorCode
-     * @var int
+     * @var int|null
      */
-    public $errorCode;
+    protected ?int $errorCode = null;
     /**
      * The errorMessage
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $errorMessage;
+    protected ?string $errorMessage = null;
     /**
      * The eventCode
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $eventCode;
+    protected ?string $eventCode = null;
     /**
      * The eventDate
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $eventDate;
+    protected ?string $eventDate = null;
     /**
      * The eventLibelle
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $eventLibelle;
+    protected ?string $eventLibelle = null;
     /**
      * The eventSite
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $eventSite;
+    protected ?string $eventSite = null;
     /**
      * The recipientCity
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $recipientCity;
+    protected ?string $recipientCity = null;
     /**
      * The recipientCountryCode
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $recipientCountryCode;
+    protected ?string $recipientCountryCode = null;
     /**
      * The recipientZipCode
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $recipientZipCode;
+    protected ?string $recipientZipCode = null;
     /**
      * The skybillNumber
      * Meta information extracted from the WSDL
      * - minOccurs: 0
-     * @var string
+     * @var string|null
      */
-    public $skybillNumber;
+    protected ?string $skybillNumber = null;
     /**
      * Constructor method for skybillInformationResult
      * @uses SkybillInformationResult::setErrorCode()
@@ -104,7 +107,7 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $recipientZipCode
      * @param string $skybillNumber
      */
-    public function __construct($errorCode = null, $errorMessage = null, $eventCode = null, $eventDate = null, $eventLibelle = null, $eventSite = null, $recipientCity = null, $recipientCountryCode = null, $recipientZipCode = null, $skybillNumber = null)
+    public function __construct(?int $errorCode = null, ?string $errorMessage = null, ?string $eventCode = null, ?string $eventDate = null, ?string $eventLibelle = null, ?string $eventSite = null, ?string $recipientCity = null, ?string $recipientCountryCode = null, ?string $recipientZipCode = null, ?string $skybillNumber = null)
     {
         $this
             ->setErrorCode($errorCode)
@@ -122,7 +125,7 @@ class SkybillInformationResult extends AbstractStructBase
      * Get errorCode value
      * @return int|null
      */
-    public function getErrorCode()
+    public function getErrorCode(): ?int
     {
         return $this->errorCode;
     }
@@ -131,20 +134,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param int $errorCode
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setErrorCode($errorCode = null)
+    public function setErrorCode(?int $errorCode = null): self
     {
         // validation for constraint: int
         if (!is_null($errorCode) && !(is_int($errorCode) || ctype_digit($errorCode))) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide an integer value, %s given', var_export($errorCode, true), gettype($errorCode)), __LINE__);
         }
         $this->errorCode = $errorCode;
+        
         return $this;
     }
     /**
      * Get errorMessage value
      * @return string|null
      */
-    public function getErrorMessage()
+    public function getErrorMessage(): ?string
     {
         return $this->errorMessage;
     }
@@ -153,20 +157,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $errorMessage
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setErrorMessage($errorMessage = null)
+    public function setErrorMessage(?string $errorMessage = null): self
     {
         // validation for constraint: string
         if (!is_null($errorMessage) && !is_string($errorMessage)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($errorMessage, true), gettype($errorMessage)), __LINE__);
         }
         $this->errorMessage = $errorMessage;
+        
         return $this;
     }
     /**
      * Get eventCode value
      * @return string|null
      */
-    public function getEventCode()
+    public function getEventCode(): ?string
     {
         return $this->eventCode;
     }
@@ -175,20 +180,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $eventCode
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setEventCode($eventCode = null)
+    public function setEventCode(?string $eventCode = null): self
     {
         // validation for constraint: string
         if (!is_null($eventCode) && !is_string($eventCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventCode, true), gettype($eventCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventCode, true), gettype($eventCode)), __LINE__);
         }
         $this->eventCode = $eventCode;
+        
         return $this;
     }
     /**
      * Get eventDate value
      * @return string|null
      */
-    public function getEventDate()
+    public function getEventDate(): ?string
     {
         return $this->eventDate;
     }
@@ -197,20 +203,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $eventDate
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setEventDate($eventDate = null)
+    public function setEventDate(?string $eventDate = null): self
     {
         // validation for constraint: string
         if (!is_null($eventDate) && !is_string($eventDate)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventDate, true), gettype($eventDate)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventDate, true), gettype($eventDate)), __LINE__);
         }
         $this->eventDate = $eventDate;
+        
         return $this;
     }
     /**
      * Get eventLibelle value
      * @return string|null
      */
-    public function getEventLibelle()
+    public function getEventLibelle(): ?string
     {
         return $this->eventLibelle;
     }
@@ -219,20 +226,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $eventLibelle
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setEventLibelle($eventLibelle = null)
+    public function setEventLibelle(?string $eventLibelle = null): self
     {
         // validation for constraint: string
         if (!is_null($eventLibelle) && !is_string($eventLibelle)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventLibelle, true), gettype($eventLibelle)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventLibelle, true), gettype($eventLibelle)), __LINE__);
         }
         $this->eventLibelle = $eventLibelle;
+        
         return $this;
     }
     /**
      * Get eventSite value
      * @return string|null
      */
-    public function getEventSite()
+    public function getEventSite(): ?string
     {
         return $this->eventSite;
     }
@@ -241,20 +249,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $eventSite
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setEventSite($eventSite = null)
+    public function setEventSite(?string $eventSite = null): self
     {
         // validation for constraint: string
         if (!is_null($eventSite) && !is_string($eventSite)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventSite, true), gettype($eventSite)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($eventSite, true), gettype($eventSite)), __LINE__);
         }
         $this->eventSite = $eventSite;
+        
         return $this;
     }
     /**
      * Get recipientCity value
      * @return string|null
      */
-    public function getRecipientCity()
+    public function getRecipientCity(): ?string
     {
         return $this->recipientCity;
     }
@@ -263,20 +272,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $recipientCity
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setRecipientCity($recipientCity = null)
+    public function setRecipientCity(?string $recipientCity = null): self
     {
         // validation for constraint: string
         if (!is_null($recipientCity) && !is_string($recipientCity)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientCity, true), gettype($recipientCity)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientCity, true), gettype($recipientCity)), __LINE__);
         }
         $this->recipientCity = $recipientCity;
+        
         return $this;
     }
     /**
      * Get recipientCountryCode value
      * @return string|null
      */
-    public function getRecipientCountryCode()
+    public function getRecipientCountryCode(): ?string
     {
         return $this->recipientCountryCode;
     }
@@ -285,20 +295,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $recipientCountryCode
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setRecipientCountryCode($recipientCountryCode = null)
+    public function setRecipientCountryCode(?string $recipientCountryCode = null): self
     {
         // validation for constraint: string
         if (!is_null($recipientCountryCode) && !is_string($recipientCountryCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientCountryCode, true), gettype($recipientCountryCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientCountryCode, true), gettype($recipientCountryCode)), __LINE__);
         }
         $this->recipientCountryCode = $recipientCountryCode;
+        
         return $this;
     }
     /**
      * Get recipientZipCode value
      * @return string|null
      */
-    public function getRecipientZipCode()
+    public function getRecipientZipCode(): ?string
     {
         return $this->recipientZipCode;
     }
@@ -307,20 +318,21 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $recipientZipCode
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setRecipientZipCode($recipientZipCode = null)
+    public function setRecipientZipCode(?string $recipientZipCode = null): self
     {
         // validation for constraint: string
         if (!is_null($recipientZipCode) && !is_string($recipientZipCode)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientZipCode, true), gettype($recipientZipCode)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($recipientZipCode, true), gettype($recipientZipCode)), __LINE__);
         }
         $this->recipientZipCode = $recipientZipCode;
+        
         return $this;
     }
     /**
      * Get skybillNumber value
      * @return string|null
      */
-    public function getSkybillNumber()
+    public function getSkybillNumber(): ?string
     {
         return $this->skybillNumber;
     }
@@ -329,13 +341,14 @@ class SkybillInformationResult extends AbstractStructBase
      * @param string $skybillNumber
      * @return \ColissimoTracking\StructType\SkybillInformationResult
      */
-    public function setSkybillNumber($skybillNumber = null)
+    public function setSkybillNumber(?string $skybillNumber = null): self
     {
         // validation for constraint: string
         if (!is_null($skybillNumber) && !is_string($skybillNumber)) {
-            throw new \InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($skybillNumber, true), gettype($skybillNumber)), __LINE__);
+            throw new InvalidArgumentException(sprintf('Invalid value %s, please provide a string, %s given', var_export($skybillNumber, true), gettype($skybillNumber)), __LINE__);
         }
         $this->skybillNumber = $skybillNumber;
+        
         return $this;
     }
 }

@@ -62,5 +62,5 @@ if ($result !== false) {
     echo PHP_EOL . sprintf('RecipientZipCode: %s', $return->getRecipientZipCode());
     echo PHP_EOL . sprintf('SkybillNumber: %s', $return->getSkybillNumber()) . PHP_EOL;
 } else {
-    echo PHP_EOL . 'An error occurred: ' . $track->getLastErrorForMethod('ColissimoTracking\ServiceType\Track::Track')->getMessage() . PHP_EOL;
+    echo PHP_EOL . 'An error occurred: ' . $track->getLastErrorForMethod(sprintf('%s::Track', TrackService::class))->getMessage() . PHP_EOL;
 }

@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ColissimoTracking\ServiceType;
 
-use \SoapClient\SoapClientBase;
+use SoapFault;
+use SoapClient\SoapClientBase;
 
 /**
  * This class stands for Track ServiceType
@@ -15,7 +18,6 @@ class Track extends SoapClientBase
      * Method to call the operation originally named track
      * @uses SoapClientBase::getSoapClient()
      * @uses SoapClientBase::setResult()
-     * @uses SoapClientBase::getResult()
      * @uses SoapClientBase::saveLastError()
      * @param \ColissimoTracking\StructType\Track $parameters
      * @return \ColissimoTracking\StructType\TrackResponse|bool
@@ -23,12 +25,14 @@ class Track extends SoapClientBase
     public function track(\ColissimoTracking\StructType\Track $parameters)
     {
         try {
-            $this->setResult($this->getSoapClient()->__soapCall('track', array(
+            $this->setResult($resultTrack = $this->getSoapClient()->__soapCall('track', [
                 $parameters,
-            ), array(), array(), $this->outputHeaders));
-            return $this->getResult();
-        } catch (\SoapFault $soapFault) {
+            ], [], [], $this->outputHeaders));
+        
+            return $resultTrack;
+        } catch (SoapFault $soapFault) {
             $this->saveLastError(__METHOD__, $soapFault);
+        
             return false;
         }
     }
